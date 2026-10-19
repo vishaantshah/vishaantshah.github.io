@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vishaan Shah | Academic & Leadership Portfolio</title>
-  <meta name="description" content="Academic, quantitative, and leadership portfolio for Vishaan Shah showcasing the EZLock Business Plan and DECA Financial Literacy Fieldwork.">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Vishaan Shah | Portfolio</title>
+  
+  <!-- Modern Clean Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS Engine -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -29,12 +32,12 @@
       border-left: 4px solid #2563eb !important;
       box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.08), 0 2px 4px -2px rgba(37, 99, 235, 0.04) !important;
     }
-    .card-ezlock-inactive {
+    .card-ezlock-collapsed {
       background-color: #edf5fe !important;
       border: 1.5px solid #bfdbfe !important;
       border-left: 4px solid transparent !important;
     }
-    .card-ezlock-inactive:hover {
+    .card-ezlock-collapsed:hover {
       background-color: #e2effe !important;
       border-color: #93c5fd !important;
     }
@@ -46,117 +49,137 @@
       border-left: 4px solid #16a34a !important;
       box-shadow: 0 4px 6px -1px rgba(22, 163, 74, 0.08), 0 2px 4px -2px rgba(22, 163, 74, 0.04) !important;
     }
-    .card-deca-inactive {
+    .card-deca-collapsed {
       background-color: #f2fbf5 !important;
       border: 1.5px solid #dcfce7 !important;
       border-left: 4px solid transparent !important;
     }
-    .card-deca-inactive:hover {
+    .card-deca-collapsed:hover {
       background-color: #eafaf1 !important;
       border-color: #86efac !important;
     }
   </style>
 </head>
-<body class="bg-slate-100/70 text-slate-800 font-sans antialiased min-h-screen flex flex-col p-3 sm:p-5">
+<body class="bg-slate-100/70 text-slate-800 font-sans antialiased min-h-screen flex flex-col p-3 sm:p-4">
 
-  <div class="max-w-[1750px] mx-auto w-full flex-grow flex flex-col h-full">
+  <!-- OPTION SWITCHER BAR -->
+  <div class="fixed top-2.5 right-4 z-50 flex items-center gap-1 bg-white/95 backdrop-blur-md px-2 py-1 rounded-full shadow-sm border border-slate-200/90 text-xs font-semibold">
+    <a href="index.html" class="px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900 transition-colors">Current (42%)</a>
+    <a href="option-b.html" class="px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900 transition-colors">Option B (Compact Table)</a>
+    <span class="px-2.5 py-1 rounded-full bg-emerald-600 text-white shadow-xs">Option C (Focus Drawer)</span>
+  </div>
 
-    <!-- SPLIT-VIEW (LEFT: 2 CURATED WORKS • RIGHT: LIVE VIEWER) -->
+  <div class="max-w-[1750px] mx-auto w-full flex-grow flex flex-col h-full pt-6 sm:pt-4">
+
+    <!-- SPLIT-VIEW (LEFT: 4 COLS • RIGHT: 8 COLS) -->
     <div class="flex-grow grid grid-cols-1 lg:grid-cols-12 gap-3.5 items-stretch h-full">
 
-      <!-- LEFT COLUMN: 2 CURATED WORKS (5 Cols on LG, 5 on XL) -->
-      <aside class="lg:col-span-5 xl:col-span-5 flex flex-col justify-between space-y-3.5 overflow-y-auto pr-0.5">
+      <!-- LEFT COLUMN: 2 CURATED WORKS (4 Cols on LG, 4 on XL) -->
+      <aside class="lg:col-span-4 xl:col-span-4 flex flex-col justify-between space-y-3 overflow-y-auto pr-0.5">
 
-        <div class="space-y-3.5">
+        <div class="space-y-3">
 
           <!-- WORK 1: EZLOCK BUSINESS PLAN (BLUISH THEME) -->
-          <div id="itemEzlock" onclick="selectWork('ezlock')" class="card-ezlock-active rounded-xl p-4 sm:p-5 transition-all cursor-pointer">
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <h2 id="titleEzlock" class="text-lg sm:text-xl font-black text-blue-700 leading-snug tracking-tight">
-                EZLock: Business Plan
-              </h2>
-              <span class="text-xs sm:text-sm font-semibold text-blue-700 bg-blue-100/90 px-2.5 py-1 rounded-md border border-blue-200/90 whitespace-nowrap">
-                56-Page Business Plan
+          <div id="itemEzlock" onclick="selectWork('ezlock')" class="card-ezlock-active rounded-xl p-4 transition-all cursor-pointer">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2 min-w-0">
+                <span id="indicatorEzlock" class="w-2 h-2 rounded-full bg-blue-600 shrink-0"></span>
+                <h2 id="titleEzlock" class="text-base sm:text-lg font-black text-blue-700 leading-snug tracking-tight truncate">
+                  EZLock: Business Plan
+                </h2>
+              </div>
+              <span class="text-xs font-semibold text-blue-700 bg-blue-100/90 px-2 py-0.5 rounded-md border border-blue-200/90 whitespace-nowrap">
+                56 Pages
               </span>
             </div>
 
-            <!-- STRUCTURED ADMISSIONS GUIDANCE TABLE -->
-            <table class="w-full text-sm sm:text-[15px] border-collapse">
-              <tbody class="divide-y divide-blue-200/50">
-                <tr>
-                  <th scope="row" class="py-2.5 pr-4 text-left font-black text-slate-900 text-xs sm:text-sm uppercase tracking-wide align-top w-[180px] sm:w-[200px] shrink-0 whitespace-nowrap">
-                    Description
-                  </th>
-                  <td class="py-2.5 text-slate-700 leading-relaxed align-top font-medium">
-                    Freshman year partner project; analyzed market trends, performed competitive analysis, and learned foundational components of a business
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" class="py-2.5 pr-4 text-left font-black text-slate-900 text-xs sm:text-sm uppercase tracking-wide align-top w-[180px] sm:w-[200px] shrink-0 whitespace-nowrap">
-                    Why You Should Care
-                  </th>
-                  <td class="py-2.5 text-slate-700 leading-relaxed align-top font-medium">
-                    Highlights hands-on exposure to entrepreneurial practices: brand creation, strategic planning, and industry analysis
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <!-- EXPANDED BODY FOR EZLOCK -->
+            <div id="bodyEzlock" class="mt-3">
+              <table class="w-full text-xs sm:text-sm border-collapse">
+                <tbody class="divide-y divide-blue-200/50">
+                  <tr>
+                    <th scope="row" class="py-2 pr-3 text-left font-black text-slate-900 text-xs uppercase tracking-wide align-top w-[115px] sm:w-[125px] shrink-0 whitespace-nowrap">
+                      Description
+                    </th>
+                    <td class="py-2 text-slate-700 leading-relaxed align-top font-medium">
+                      Freshman year partner project; analyzed market trends, performed competitive analysis, and learned foundational components of a business
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="py-2 pr-3 text-left font-black text-slate-900 text-xs uppercase tracking-wide align-top w-[115px] sm:w-[125px] shrink-0 whitespace-nowrap">
+                      Why You Should Care
+                    </th>
+                    <td class="py-2 text-slate-700 leading-relaxed align-top font-medium">
+                      Highlights hands-on exposure to entrepreneurial practices: brand creation, strategic planning, and industry analysis
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
-          <!-- WORK 2: DECA FINANCIAL LITERACY STUDY (GREENISH THEME) -->
-          <div id="itemDeca" onclick="selectWork('deca')" class="card-deca-inactive rounded-xl p-4 sm:p-5 transition-all cursor-pointer">
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <h2 id="titleDeca" class="text-base sm:text-lg font-black text-slate-700 leading-snug tracking-tight">
-                DECA: Financial Literacy Project
-              </h2>
-              <span class="text-xs sm:text-sm font-semibold text-emerald-800 bg-emerald-100/90 px-2.5 py-1 rounded-md border border-emerald-200/90 whitespace-nowrap">
-                21 Pages + Interactive Website
-              </span>
+          <!-- WORK 2: DECA FINANCIAL LITERACY PROJECT (GREENISH THEME) -->
+          <div id="itemDeca" onclick="selectWork('deca')" class="card-deca-collapsed rounded-xl p-3 sm:p-3.5 transition-all cursor-pointer">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2 min-w-0">
+                <span id="indicatorDeca" class="w-2 h-2 rounded-full bg-emerald-400 opacity-60 shrink-0"></span>
+                <h2 id="titleDeca" class="text-base sm:text-lg font-black text-slate-700 leading-snug tracking-tight truncate">
+                  DECA: Financial Literacy Project
+                </h2>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-xs font-semibold text-emerald-800 bg-emerald-100/90 px-2 py-0.5 rounded-md border border-emerald-200/90 text-right leading-tight">
+                  21 Pages<br><span class="text-[11px] font-medium">+ Interactive Website</span>
+                </span>
+                <span id="arrowDeca" class="text-xs text-emerald-600 font-bold hidden">▾</span>
+              </div>
             </div>
 
-            <!-- STRUCTURED ADMISSIONS GUIDANCE TABLE -->
-            <table class="w-full text-sm sm:text-[15px] border-collapse">
-              <tbody class="divide-y divide-emerald-200/50">
-                <tr>
-                  <th scope="row" class="py-2.5 pr-4 text-left font-black text-slate-900 text-xs sm:text-sm uppercase tracking-wide align-top w-[180px] sm:w-[200px] shrink-0 whitespace-nowrap">
-                    Description
-                  </th>
-                  <td class="py-2.5 text-slate-700 leading-relaxed align-top font-medium">
-                    Student directed financial literacy initiative; includes research plan and website design
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" class="py-2.5 pr-4 text-left font-black text-slate-900 text-xs sm:text-sm uppercase tracking-wide align-top w-[180px] sm:w-[200px] shrink-0 whitespace-nowrap">
-                    Why You Should Care
-                  </th>
-                  <td class="py-2.5 text-slate-700 leading-relaxed align-top font-medium">
-                    Reflects in-depth analysis of middle schoolers' spending habits through project management and research of real-world data gathered directly from 75+ young students
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row" class="py-2.5 pr-4 text-left align-top w-[180px] sm:w-[200px] shrink-0 whitespace-nowrap">
-                    <a href="https://sites.google.com/frhsd.com/behindthepricedeca?usp=sharing" target="_blank" onclick="event.stopPropagation();" class="font-black text-emerald-700 hover:text-emerald-900 text-xs sm:text-sm uppercase tracking-wide inline-flex items-center gap-1 underline underline-offset-4 decoration-emerald-500/70 hover:decoration-emerald-900 transition-colors">
-                      <span>Interactive Website</span>
-                      <span class="text-xs font-bold">↗</span>
-                    </a>
-                  </th>
-                  <td class="py-2.5 text-slate-700 leading-relaxed align-top font-medium">
-                    The learning tool crafted for middle schoolers to enhance their spending habits with the ultimate goal of instilling a deeper understanding of the value of the dollar
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <!-- COLLAPSIBLE BODY FOR DECA (HIDDEN INITIALLY) -->
+            <div id="bodyDeca" class="mt-3 hidden">
+              <table class="w-full text-xs sm:text-sm border-collapse">
+                <tbody class="divide-y divide-emerald-200/50">
+                  <tr>
+                    <th scope="row" class="py-2 pr-3 text-left font-black text-slate-900 text-xs uppercase tracking-wide align-top w-[115px] sm:w-[125px] shrink-0 whitespace-nowrap">
+                      Description
+                    </th>
+                    <td class="py-2 text-slate-700 leading-relaxed align-top font-medium">
+                      Student directed financial literacy initiative; includes research plan and website design
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="py-2 pr-3 text-left font-black text-slate-900 text-xs uppercase tracking-wide align-top w-[115px] sm:w-[125px] shrink-0 whitespace-nowrap">
+                      Why You Should Care
+                    </th>
+                    <td class="py-2 text-slate-700 leading-relaxed align-top font-medium">
+                      Reflects in-depth analysis of middle schoolers' spending habits through project management and research of real-world data gathered directly from 50+ young students
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="py-2 pr-3 text-left align-top w-[115px] sm:w-[125px] shrink-0 whitespace-nowrap">
+                      <a href="https://sites.google.com/frhsd.com/behindthepricedeca?usp=sharing" target="_blank" onclick="event.stopPropagation();" class="font-black text-emerald-700 hover:text-emerald-900 text-xs uppercase tracking-wide inline-flex items-center gap-1 underline underline-offset-4 decoration-emerald-500/70 hover:decoration-emerald-900 transition-colors">
+                        <span>Interactive Site</span>
+                        <span class="text-xs font-bold">↗</span>
+                      </a>
+                    </th>
+                    <td class="py-2 text-slate-700 leading-relaxed align-top font-medium">
+                      The learning tool crafted for middle schoolers to enhance their spending habits with the ultimate goal of instilling a deeper understanding of the value of the dollar
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
         </div>
 
         <!-- PRESENTED TO YOU BY V SECTION (PINNED TO BOTTOM) -->
-        <div class="bg-white rounded-xl p-4 sm:p-5 border border-slate-200/90 shadow-xs flex items-center gap-4 mt-auto">
+        <div class="bg-white rounded-xl p-3.5 border border-slate-200/90 shadow-xs flex items-center gap-3.5 mt-auto">
           <div class="relative shrink-0">
-            <img src="assets/images/vishaan_shah.png" alt="Vishaan Shah (V)" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover object-center ring-2 ring-blue-600/25 ring-offset-2 border border-slate-200 shadow-sm">
+            <img src="assets/images/vishaan_shah.png" alt="Vishaan Shah (V)" class="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover object-center ring-2 ring-blue-600/25 ring-offset-2 border border-slate-200 shadow-sm">
           </div>
           <div class="min-w-0 flex-grow">
-            <h3 class="text-base sm:text-lg font-black text-slate-900 leading-snug tracking-tight">
+            <h3 class="text-sm sm:text-base font-black text-slate-900 leading-snug tracking-tight">
               Presented by Vishaan Shah
             </h3>
           </div>
@@ -164,8 +187,8 @@
 
       </aside>
 
-      <!-- RIGHT COLUMN: SEAMLESS LIVE DOCUMENT VIEWER (7 Cols on LG, 7 on XL) -->
-      <section class="lg:col-span-7 xl:col-span-7 bg-white rounded-xl border border-slate-200/90 shadow-xs flex flex-col overflow-hidden min-h-[620px] lg:min-h-[840px]">
+      <!-- RIGHT COLUMN: EXPANSIVE LIVE DOCUMENT VIEWER (8 Cols on LG, 8 on XL) -->
+      <section class="lg:col-span-8 xl:col-span-8 bg-white rounded-xl border border-slate-200/90 shadow-xs flex flex-col overflow-hidden min-h-[620px] lg:min-h-[840px]">
         
         <!-- HIGH-PERFORMANCE IFRAME CONTAINER -->
         <div id="pdfContainer" class="flex-grow w-full h-full relative bg-slate-50">
@@ -197,22 +220,36 @@
       const container = document.getElementById('pdfContainer');
       container.innerHTML = `<iframe id="pdfFrame" src="${work.url}#view=FitH" class="w-full h-full min-h-[600px] lg:min-h-[800px] border-0" type="application/pdf"></iframe>`;
 
-      // Update Card Visuals
+      // Update Card Visuals & Collapsible Accordion
       const itemEzlock = document.getElementById('itemEzlock');
       const itemDeca = document.getElementById('itemDeca');
+      const bodyEzlock = document.getElementById('bodyEzlock');
+      const bodyDeca = document.getElementById('bodyDeca');
       const titleEzlock = document.getElementById('titleEzlock');
       const titleDeca = document.getElementById('titleDeca');
+      const indEzlock = document.getElementById('indicatorEzlock');
+      const indDeca = document.getElementById('indicatorDeca');
 
       if (key === 'ezlock') {
-        itemEzlock.className = 'card-ezlock-active rounded-xl p-4 sm:p-5 transition-all cursor-pointer';
-        itemDeca.className = 'card-deca-inactive rounded-xl p-4 sm:p-5 transition-all cursor-pointer';
-        titleEzlock.className = 'text-lg sm:text-xl font-black text-blue-700 leading-snug tracking-tight';
-        titleDeca.className = 'text-base sm:text-lg font-black text-slate-700 leading-snug tracking-tight';
+        itemEzlock.className = 'card-ezlock-active rounded-xl p-4 transition-all cursor-pointer';
+        bodyEzlock.classList.remove('hidden');
+        titleEzlock.className = 'text-base sm:text-lg font-black text-blue-700 leading-snug tracking-tight truncate';
+        indEzlock.className = 'w-2 h-2 rounded-full bg-blue-600 shrink-0';
+
+        itemDeca.className = 'card-deca-collapsed rounded-xl p-3 sm:p-3.5 transition-all cursor-pointer';
+        bodyDeca.classList.add('hidden');
+        titleDeca.className = 'text-base sm:text-lg font-black text-slate-700 leading-snug tracking-tight truncate';
+        indDeca.className = 'w-2 h-2 rounded-full bg-emerald-400 opacity-60 shrink-0';
       } else {
-        itemDeca.className = 'card-deca-active rounded-xl p-4 sm:p-5 transition-all cursor-pointer';
-        itemEzlock.className = 'card-ezlock-inactive rounded-xl p-4 sm:p-5 transition-all cursor-pointer';
-        titleDeca.className = 'text-base sm:text-lg font-black text-emerald-700 leading-snug tracking-tight';
-        titleEzlock.className = 'text-lg sm:text-xl font-black text-slate-700 leading-snug tracking-tight';
+        itemDeca.className = 'card-deca-active rounded-xl p-4 transition-all cursor-pointer';
+        bodyDeca.classList.remove('hidden');
+        titleDeca.className = 'text-base sm:text-lg font-black text-emerald-700 leading-snug tracking-tight truncate';
+        indDeca.className = 'w-2 h-2 rounded-full bg-emerald-600 shrink-0';
+
+        itemEzlock.className = 'card-ezlock-collapsed rounded-xl p-3 sm:p-3.5 transition-all cursor-pointer';
+        bodyEzlock.classList.add('hidden');
+        titleEzlock.className = 'text-base sm:text-lg font-black text-slate-700 leading-snug tracking-tight truncate';
+        indEzlock.className = 'w-2 h-2 rounded-full bg-blue-400 opacity-60 shrink-0';
       }
     }
   </script>
